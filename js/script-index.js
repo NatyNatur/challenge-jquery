@@ -7,13 +7,14 @@ $(document).ready( function(){
 
 	//La variable "recipesArray" esta declarada en el archivo "data/recipes.js"
 	renderHighlightedRecipes(recipesArray);
+	renderActivities(activities);
 });
 
 	/*
 	* Le entrego un párrafo al div llamado 'callout-news'
 	*/
 	function printNews() {
-	$(".callout-news").append('<p class="newrecipes">NUEVAS RECETAS</p>');
+	$('.callout-news').append('<p class="newrecipes">NUEVAS RECETAS</p>');
  }
 
 /*
@@ -25,7 +26,7 @@ $(document).ready( function(){
 function renderHighlightedRecipes(recipesArray) {
 	console.log('Recipes: ', recipesArray);
 	for (var i = 0; i < recipesArray.length; i++) {
-		if (recipesArray[i].highlighted){
+		if (recipesArray[i].highlighted) {
 			console.log([i]);
 			renderRecipe(recipesArray[i]);
 		}
@@ -59,9 +60,14 @@ function renderRecipe(recipe) {
 
 /*
 * Función que se encarga de pintar todas las actividades
+* Si la longitud de activities es > 0, 
+* desaparece el mensaje "No one is cooking yet!"
 */
-function renderActivities(activitiesArray) {
-	console.log('Activities: ', activitiesArray);
+function renderActivities(activities) {
+	console.log('Activities: ', activities);
+	if (activities.length > 0) {
+		$('.wrapper-message').hide();
+	}
 }
 
 /*

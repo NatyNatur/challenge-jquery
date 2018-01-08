@@ -1,11 +1,19 @@
 $(document).ready( function(){
 
 	$('.js-back').hide();
+
 	//La variable "recipesArray" esta declarada en el archivo "data/recipes.js"
 	renderHighlightedRecipes(recipesArray);
 
+	printNews();
 });
 
+	/*
+	* Le entrego un párrafo al div llamado 'callout-news'
+	*/
+	function printNews() {
+	$(".callout-news").append('<p class="newrecipes">NUEVAS RECETAS</p>');
+ }
 
 /*
 * Función que se encarga de pintar TODAS las recetas que tengan 

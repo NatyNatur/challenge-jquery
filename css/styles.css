@@ -1495,7 +1495,7 @@ nav .nav-group.right {
   opacity: 1;
 }
 .page.home .bg-image.home {
-  height: 50%;
+  height: 30em;
 }
 .page.home .bg-image.home:before,
 .page.home .bg-image.home:after {

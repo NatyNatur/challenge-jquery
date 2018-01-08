@@ -18,9 +18,20 @@ $(document).ready( function(){
 /*
 * Función que se encarga de pintar TODAS las recetas que tengan 
 * marcado el atributo "highlighted" como TRUE
+* el objeto, si tiene el atributo "highlighted", siempre está como true
 */
+var recipe = [];
+
 function renderHighlightedRecipes(recipesArray) {
 	console.log('Recipes: ', recipesArray);
+	for (var i = 0; i < recipesArray.length; i++) {
+		if (recipesArray[i].highlighted){
+			console.log([i]);
+			recipe.push(recipesArray[i].highlighted);
+			console.log(recipe);
+			renderRecipe(recipesArray[i]);
+		}
+	}
 }
 
 /*
@@ -31,6 +42,7 @@ function renderHighlightedRecipes(recipesArray) {
 */
 function renderRecipe(recipe) {
 	console.log('Voy a pintar la receta: ', recipe);
+
 }
 
 
